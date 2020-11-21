@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "../theme/appTheme";
-import { Container, CssBaseline, ThemeProvider } from "@material-ui/core";
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import WeatherGuy from "./WeatherGuy";
 
 function App() {
