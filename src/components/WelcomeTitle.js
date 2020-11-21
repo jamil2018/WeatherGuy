@@ -3,8 +3,9 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    color: theme.palette.primary.main,
-    margin: theme.spacing(1),
+    color: theme.palette.text.primary,
+    margin: `${theme.spacing(2)} 0`,
+    textTransform: "capitalize",
   },
 }));
 

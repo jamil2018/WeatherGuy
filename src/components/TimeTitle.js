@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
+    paddingTop: theme.spacing(3),
   },
 }));
 
