@@ -7,9 +7,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: "rgba(10, 10, 10, 0.4)",
     color: theme.palette.text.primary,
-    padding: "0rem 1.5rem",
+    padding: `0rem ${theme.spacing(0.05)}rem`,
   },
   cardContainer: {
+    [theme.breakpoints.down("sm")]: {
+      minWidth: "80%",
+    },
+    [theme.breakpoints.between("sm", "md")]: {
+      minWidth: "45%",
+    },
     minWidth: "35%",
   },
   fullHeight: {
