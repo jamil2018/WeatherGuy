@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useWeatherData = (lon, lat) => {
+const useLocationData = (lon, lat) => {
   const [res, setRes] = useState("");
   const [error, setError] = useState("");
 
@@ -11,10 +11,10 @@ const useWeatherData = (lon, lat) => {
         try {
           const cancelToken = axios.CancelToken;
           const source = cancelToken.source();
-          const reqURI = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`;
-          const weatherData = await axios.get(reqURI);
-          setRes(weatherData);
-          return source.cancel("axios request cancelled");
+          const reqURI = `https://us1.locationiq.com/v1/reverse.php?key=${process.env.REACT_APP_LOCATION_API_KEY}&lat=${lat}&lon=${lon}&format=json`;
+          const locationData = await axios.get(reqURI);
+          setRes(locationData);
+          return source.cancel("axios requests cancelled");
         } catch (error) {
           setError(error);
         }
@@ -26,4 +26,4 @@ const useWeatherData = (lon, lat) => {
   return [res, error];
 };
 
-export default useWeatherData;
+export default useLocationData;

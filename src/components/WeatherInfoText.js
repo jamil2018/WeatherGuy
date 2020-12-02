@@ -3,18 +3,22 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: `${theme.spacing(2)} 0`,
+    fontWeight: "300",
     textTransform: "capitalize",
   },
 }));
 
-const WelcomeTitle = ({ title }) => {
+const WeatherInfoText = ({ text, variant, className }) => {
   const classes = useStyles();
   return (
-    <Typography variant="h5" className={classes.root} color="textPrimary">
-      {title}
+    <Typography
+      variant={variant}
+      className={[classes.root, className].join(" ")}
+      color="textPrimary"
+    >
+      {text}
     </Typography>
   );
 };
 
-export default WelcomeTitle;
+export default WeatherInfoText;

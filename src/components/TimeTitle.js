@@ -17,9 +17,10 @@ const TimeTitle = () => {
     setCurrentTime(time);
   };
   useEffect(() => {
-    setInterval(() => {
+    const clear = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
     }, 1000);
+    return () => clearInterval(clear);
   }, []);
   return (
     <Typography variant="h2" className={classes.root}>
