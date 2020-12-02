@@ -5,12 +5,15 @@ import DataGroup from "./DataGroup";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: "rgba(10, 10, 10, 0.3)",
+    background: "rgba(10, 10, 10, 0.4)",
     color: theme.palette.text.primary,
     padding: "0rem 1.5rem",
   },
   cardContainer: {
     minWidth: "35%",
+  },
+  fullHeight: {
+    height: "55vh",
   },
 }));
 const WeatherDataCard = ({
@@ -24,7 +27,12 @@ const WeatherDataCard = ({
 }) => {
   const classes = useStyles();
   return (
-    <Grid container justify="center" alignItems="center">
+    <Grid
+      container
+      justify="center"
+      alignItems="center"
+      className={classes.fullHeight}
+    >
       <Grid item className={classes.cardContainer}>
         <Card className={classes.root}>
           <CardContent>
