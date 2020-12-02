@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardContent, Grid, makeStyles } from "@material-ui/core";
 import GeneralWeatherInfo from "./GeneralWeatherInfo";
 import DataGroup from "./DataGroup";
 
